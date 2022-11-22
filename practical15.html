@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <script type="text/javascript"> function getReuslt() {
+            var sub1 = document.getElementById("sub1").value;
+            var sub2 = document.getElementById("sub2").value;
+            var sub3 = document.getElementById("sub3").value;
+            var sub4 = document.getElementById("sub4").value;
+            var total = parseInt(sub1) + parseInt(sub2) + parseInt(sub3) + parseInt(sub4);
+            document.getElementById("total").value = total;
+            if (sub1 >= 23 && sub2 >= 23 && sub3 >= 23 && sub4 >= 23) {
+                alert("Your passed the test");
+            }
+            else {
+                alert("Your failed the test fail");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>Enter your marks</th>
+        </tr>
+
+        <tr>
+            <td>Subject1: </td>
+            <td><input type=text id="sub1"></td>
+        </tr>
+
+        <tr>
+            <td>Subject2: </td>
+            <td><input type=text id="sub2"></td>
+        </tr>
+
+        <tr>
+            <td>Subject3: </td>
+            <td><input type=text id="sub3"></td>
+        </tr>
+
+        <tr>
+            <td>Subject4: </td>
+            <td><input type=text id="sub4"></td>
+        </tr>
+
+        <tr>
+            <td>Total: </td>
+            <td><input type="text" id="total" disabled></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="Submit" onclick="getReuslt()" /></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <script language="javascript"> function verify() {
+            if (document.f.name.value == "") {
+                alert("Please give the name"); document.f.name.forus(); return false;
+            }
+            if (document.f.email.value == "") {
+                alert("Please give the email"); return false;
+            }
+            if (document.f.gender[0].checked == false && document.f.gender[1].checked == false) {
+                alert("Please select gender"); document.f.gender.focus(); return false;
+            }
+            if (document.f.myaddress.value == "") {
+                alert("Please give address"); document.f.myaddress.focus(); return false;
+            }
+            if (document.f.pass.value == "") {
+                alert("Please give Password"); document.f.pass.focus(); return false;
+            }
+            if (document.f.pass.value.lenght < 6) {
+                alert("Please give a Password more than 5 characters"); document.f.pass.focus();
+                return false;
+            }
+            if (document.f.r_pass.value == "") {
+                alert("Please retype your password"); document.f.r_pass.focus(); return false;
+            }
+            if ((document.f.pass.value) != (document.f.r_pass.value)) {
+                alert("Your password does not match"); document.f.r_pass.value == ""; document.f.r_pass.focus();
+                return false;
+            }
+            return (true);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <form method="POST" name="f">
+        <table border="2" align="center" cellpadding="7">
+            <tr>
+                <td><strong>Name:</strong></td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+
+            <tr>
+                <td><strong>Email:</strong></td>
+                <td><input type="text" name="email" /> </td>
+            </tr>
+
+            <tr>
+                <td><strong>Gender:</strong></td>
+                <td><input type="radio" name="gender" value="Male" />Male
+                    <input type="radio" name="gender" value="Female" />Female
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Address:</strong></td>
+                <td><textarea rows="5" cols="20" name="myaddress" /></textarea></td>
+            </tr>
+
+            <tr>
+                <td><strong>Password:</strong></td>
+                <td> <input type="password" name="pass" /></td>
+            </tr>
+
+            <tr>
+                <td><strong>Retype Password:</strong></td>
+                <td><input type="password" name="r_pass" /></td>
+            </tr>
+
+            <tr align="center">
+                <td>
+                    <input type="Reset">
+                </td>
+                <td>
+                    <input type="submit" value="Submit" onClick="return (verify());" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

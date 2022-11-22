@@ -1,0 +1,47 @@
+<html>
+
+<body>
+    <h2>Calculator using switch case</h2>
+    <form name="calc" action="POST">
+        <input type="text" name="x" size="10">
+        <select name=operator>
+            <option value=plus> + </option>
+            <option value=minus> - </option>
+            <option value=divide> / </option>
+            <option value=multiply> * </option>
+            <option value="modulo"> % </option>
+        </select>
+        <input type="text" name="y" size="10"> =
+        <input type="text" name="answer" size="10" disabled>
+        <input type="button" value="Submit" onclick="calculator()">
+    </form>
+    <script type="text/javascript">
+        function calculator() {
+            var x = document.calc.x.value;
+            var y = document.calc.y.value;
+            var operator = document.calc.operator.value;
+            const problem = x + ' ' + operator + ' ' + y;
+            console.log(problem);
+            const calculate = opr => {
+                const [x, operation, y] = opr.split(" ");
+                switch (operation) {
+                    case "plus":
+                        return +x + +y;
+                    case "minus":
+                        return x - y;
+                    case "multiply":
+                        return x * y;
+                    case "divide":
+                        return x / y;
+                    case "modulo":
+                        return +x % +y;
+                    default:
+                        return 0;
+                }
+            }
+            document.calc.answer.value = (calculate(problem));
+        }
+    </script>
+</body>
+
+</html>

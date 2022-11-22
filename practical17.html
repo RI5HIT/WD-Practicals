@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function getTotal() {
+            var num = [10, 30, 50, 70, 90];
+            var sum = num.reduce(function (a, b) { return a + b; }, 0);
+            console.log(sum);
+            document.getElementById("totalanswer").innerHTML = "<b>" + sum + "</b>";
+        }
+    </script>
+</head>
+
+<body onload="getTotal()">
+    Sum of the array is : <span id="totalanswer"></span>
+</body>
+
+</html>
